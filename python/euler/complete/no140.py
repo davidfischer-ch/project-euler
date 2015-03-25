@@ -14,11 +14,12 @@
 # 25n^2 + 70n + 49 = 5m^2 + 44
 # (5n + 7)^2 - 5m^2 = 44
 
-from python.conway_topograph import all_values_on_form
-from python.conway_topograph import get_recurrence
-from python.conway_topograph import start_to_series
+from ..conway_topograph import all_values_on_form
+from ..conway_topograph import get_recurrence
+from ..conway_topograph import start_to_series
 from ..decorators import euler_timer
 from ..functions import recurrence_next
+
 
 def golden_nuggets(limit):
     # We seek x_k^2 - 5y_k^2 = 44
@@ -35,6 +36,7 @@ def golden_nuggets(limit):
         nuggets.extend(next)
         series = [recurrence_next(relation, values) for values in series]
     return sorted([(value - 7)/5 for value in nuggets])[:limit]
+
 
 def main(verbose=False):
     nuggets = golden_nuggets(30)

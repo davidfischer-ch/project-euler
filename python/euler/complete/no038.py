@@ -5,11 +5,13 @@
 
 from ..decorators import euler_timer
 
+
 def is_pandigital_9(str_):
     for dig in [str(elt) for elt in range(1, 10)]:
         if str_.count(dig) != 1:
             return False
     return True
+
 
 def all_pandigitals_1_to_n(n):
     to_mult = range(1, n + 1)
@@ -24,6 +26,7 @@ def all_pandigitals_1_to_n(n):
         curr = "".join(str(multiplier*elt) for elt in to_mult)
 
     return result
+
 
 def main(verbose=False):
     result = []

@@ -13,6 +13,7 @@ from ..decorators import euler_timer
 from ..functions import sieve
 from ..functions import inverse_mod_n
 
+
 def main(verbose=False):
     PRIMES = sieve(10**7)
     running_sum = 0

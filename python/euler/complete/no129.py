@@ -23,6 +23,7 @@ from fractions import gcd
 from ..decorators import euler_timer
 from ..functions import order_mod_n
 
+
 def main(verbose=False):
     max_a = 0
     n = 10**6

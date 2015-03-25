@@ -8,6 +8,7 @@
 
 from ..decorators import euler_timer
 
+
 def proper_divisor_sums(n):
     result = [0]*(n + 1)
     # loop over all possible divisors
@@ -18,6 +19,7 @@ def proper_divisor_sums(n):
         for parent in xrange(2*divisor, n + 1, divisor):
             result[parent] += divisor
     return result
+
 
 def amicable_cycle(n, cycle_hash, divisors, break_point):
     if n in cycle_hash:
@@ -43,6 +45,7 @@ def amicable_cycle(n, cycle_hash, divisors, break_point):
     for val in cycle:
         cycle_hash[val] = (divisors[val], set_val[:])
     return cycle_hash[n][1]
+
 
 def main(verbose=False):
     MAX_n = 10**6

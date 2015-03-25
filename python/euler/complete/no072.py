@@ -41,6 +41,7 @@ from ..decorators import euler_timer
 from ..functions import mu
 from ..functions import sieve
 
+
 def main(verbose=False):
     D = 10**6
     PRIMES = sieve(int(sqrt(D)) + 1)
@@ -48,7 +49,7 @@ def main(verbose=False):
     # 2*sum_{i in  1 to D} PHI(i) = 1 + sum_{i in  1 to D} MU(i) floor(D/i)**2
     # 2*|F_D| = 3 + sum_{i in  1 to D} MU(i) floor(D/i)**2
     mu_hash = {1: 1}
-    running_sum = D**2 # i = 1
+    running_sum = D**2  # i = 1
     for i in range(2, D + 1):
         running_sum += mu(i, mu_hash, PRIMES)*(int(floor(D*1.0/i))**2)
 

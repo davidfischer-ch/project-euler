@@ -6,16 +6,19 @@ from math import sqrt
 
 from ..decorators import euler_timer
 
+
 def is_1_9_pandigital(n):
     digs = [int(dig) for dig in str(n)]
     if len(digs) != 9:
         return False
     return sorted(digs) == range(1, 10)
 
+
 def log_fib(n):
     root_plus = 0.5*(1 + sqrt(5))
     root_ratio = 0.5*(sqrt(5) - 3)
     return n*log(root_plus) - 0.5*log(5) + log(1 - root_ratio**n)
+
 
 def main(verbose=False):
     # 10**(d - 1) <= N < 10**d

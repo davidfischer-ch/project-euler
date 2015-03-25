@@ -4,6 +4,7 @@ from ..decorators import euler_timer
 from ..functions import inverse_mod_n
 from ..functions import sieve
 
+
 def main(verbose=False):
     PRIMES = sieve(10**6 + 3) # 10**6 + 3 is the final value of p_2
 

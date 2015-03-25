@@ -7,6 +7,7 @@ from ..decorators import euler_timer
 from ..functions import first_prime_divisor
 from ..functions import robust_divide
 
+
 def pascal_next(row):
     if len(row) < 2:
         raise ValueError("Don't pass this, breaks algorithm")
@@ -20,18 +21,20 @@ def pascal_next(row):
         result.append(row[-1]*2)
     return result
 
+
 def unique_in_pascal(rows):
     if rows < 1:
         raise ValueError("Rows should be positive")
     elif rows < 3:
         return [1]
 
-    vals = set([1,2])
-    curr = [1,2]
+    vals = set([1, 2])
+    curr = [1, 2]
     for i in range(4, rows + 1):
         curr = pascal_next(curr)
         vals.update(curr)
     return sorted(list(vals))
+
 
 def is_squarefree(n):
     if n == 1:
@@ -45,6 +48,7 @@ def is_squarefree(n):
         if quotient == 1:
             return (count == 1)
     return False
+
 
 def main(verbose=False):
     NUM_ROWS = 51

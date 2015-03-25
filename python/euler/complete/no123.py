@@ -27,12 +27,13 @@
 from ..decorators import euler_timer
 from ..functions import sieve
 
+
 def main(verbose=False):
     # Since p_n > 70710, to be safe let's multiply by 10
     PRIMES = sieve(707100)
     # The odd primes are the even indices here
     prime_index = 1
-    product = 2*(1*2) # p_1 = 2
+    product = 2*(1*2)  # p_1 = 2
     while product < 10**10:
         prime_index += 2
         prime = PRIMES[prime_index-1]
@@ -41,4 +42,3 @@ def main(verbose=False):
 
 if __name__ == '__main__':
     print euler_timer(123)(main)(verbose=True)
-

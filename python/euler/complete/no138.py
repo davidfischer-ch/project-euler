@@ -26,11 +26,12 @@
 # 25*B**2 + s*20*B + 4 + 1 = 5*L**2
 # 5*(L**2) - (5*B + 2*s)**2 = 1
 
-from python.conway_topograph import all_values_on_form
-from python.conway_topograph import get_recurrence
-from python.conway_topograph import start_to_series
+from ..conway_topograph import all_values_on_form
+from ..conway_topograph import get_recurrence
+from ..conway_topograph import start_to_series
 from ..decorators import euler_timer
 from ..functions import recurrence_next
+
 
 def solutions(limit):
     # We seek 5x_k^2 - y_k^2 = 1
@@ -45,6 +46,7 @@ def solutions(limit):
         result.extend(next)
         series = [recurrence_next(relation, values) for values in series]
     return sorted(result)[:limit]
+
 
 def main(verbose=False):
     # smallest 12 solutions returned in solutions(12)

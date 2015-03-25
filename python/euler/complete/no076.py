@@ -26,8 +26,8 @@
 
 from ..decorators import euler_timer
 
+
 def partitions(n):
-    from math import sqrt
     p = {}
     for k in range(1, n + 1):
         p[(k, k)] = 1
@@ -37,6 +37,7 @@ def partitions(n):
             else:
                 p[(i, k)] = p[(i + 1, k)] + p[(i, k - i)]
     return p[(1, n)]
+
 
 def main(verbose=False):
     return partitions(100) - 1

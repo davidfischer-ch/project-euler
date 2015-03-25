@@ -6,6 +6,7 @@ from math import factorial
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     n = 50
     count = 0

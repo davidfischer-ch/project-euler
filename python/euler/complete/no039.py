@@ -5,6 +5,7 @@
 from ..decorators import euler_timer
 from ..functions import all_factors
 
+
 def all_triples(p, factors_hash=None):
     if factors_hash is None:
         factors_hash = {}
@@ -28,9 +29,10 @@ def all_triples(p, factors_hash=None):
         for m in choices_m:
             n = p/(2*k*m) - m
             if n > 0 and m > n:
-                result.append((k,m,n))
+                result.append((k, m, n))
 
     return result
+
 
 def convert_to_triangle(triple):
     k, m, n = triple
@@ -39,9 +41,11 @@ def convert_to_triangle(triple):
     c = k*(m**2 + n**2)
     return tuple(sorted((a, b, c)))
 
+
 def all_triangles(p, factors_hash=None):
     triples = all_triples(p, factors_hash)
     return list(set(convert_to_triangle(triple) for triple in triples))
+
 
 def all_triangles_up_to_n(n):
     factors_hash = all_factors(n)
@@ -50,9 +54,9 @@ def all_triangles_up_to_n(n):
         result[p] = all_triangles(p, factors_hash)
     return result
 
+
 def main(verbose=False):
     all_tri = all_triangles_up_to_n(1000)
-    lengths = {}
     max_val = -1
     max_keys = []
     for key, value in all_tri.iteritems():

@@ -5,6 +5,7 @@
 from ..decorators import euler_timer
 from ..functions import prime_factors
 
+
 def main(verbose=False):
     return max(prime_factors(600851475143))
 

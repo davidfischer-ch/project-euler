@@ -22,6 +22,7 @@ from ..functions import power_up_to_digits
 from ..functions import prime_factors
 from ..functions import sieve
 
+
 def main(verbose=False):
     prime_factors_hash = {}
 
@@ -37,7 +38,6 @@ def main(verbose=False):
     PRIMES = sieve(100)
 
     max_prod = 10**21
-    res = []
     for product in products:
         factors = prime_factors(product, unique=False, hash_=prime_factors_hash)
         factors = [(factor - 1)/2 for factor in factors][::-1]

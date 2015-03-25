@@ -2,9 +2,10 @@
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     destinations = {1: 1, 89: 89}
-    count = 1 # 89 has already been encountered
+    count = 1  # 89 has already been encountered
     for i in range(2, 10**7):
         curr = i
         to_add = []

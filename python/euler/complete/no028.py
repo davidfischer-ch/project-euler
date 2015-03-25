@@ -14,6 +14,7 @@
 
 from ..decorators import euler_timer
 
+
 # 1, 1, 2, 2, 3, 3, 4, 4, etc., every 2 is a corner
 
 def spiral_sum(n):
@@ -41,6 +42,7 @@ def spiral_sum(n):
         step_num += 1
 
     return total
+
 
 def main(verbose=False):
     return spiral_sum(1001)

@@ -5,6 +5,7 @@ from math import log
 from ..decorators import euler_timer
 from ..functions import sieve
 
+
 def hamming_type(max_n, primes):
     # assumes primes is sorted
     if primes == []:
@@ -22,10 +23,10 @@ def hamming_type(max_n, primes):
         count += hamming_type(max_n/(prime**power), primes[1:])
     return count
 
+
 def main(verbose=False):
     PRIMES = sieve(100)
     return hamming_type(10**9, PRIMES)
 
 if __name__ == '__main__':
     print euler_timer(204)(main)(verbose=True)
-

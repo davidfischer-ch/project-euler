@@ -21,6 +21,7 @@ from math import factorial
 
 from ..decorators import euler_timer
 
+
 def digit_factorial_sum(n, hash_=None):
     if hash_ is None:
         hash_ = {}
@@ -30,6 +31,7 @@ def digit_factorial_sum(n, hash_=None):
     result = sum(factorial(int(dig)) for dig in str(n))
     hash_[n] = result
     return result
+
 
 def chain(n, next_hash=None, chain_hash=None):
     if chain_hash is None:
@@ -47,6 +49,7 @@ def chain(n, next_hash=None, chain_hash=None):
         next_ = digit_factorial_sum(path[-1], next_hash)
     chain_hash[n] = path
     return path
+
 
 def main(verbose=False):
     chains = {}

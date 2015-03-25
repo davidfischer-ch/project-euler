@@ -15,6 +15,7 @@ from ..decorators import euler_timer
 from ..functions import order_mod_n
 from ..functions import sieve
 
+
 def main(verbose=False):
     prime_max = 10**5
     PRIMES = sieve(prime_max)

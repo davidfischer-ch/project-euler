@@ -16,6 +16,7 @@ from itertools import product as i_product
 
 from ..decorators import euler_timer
 
+
 def find(n, value_list):
     for value in value_list:
         if value % n == 0:
@@ -39,6 +40,7 @@ def find(n, value_list):
     best_opposites = [val for val in value_list
                       if val % n == (-(best_match*residue)) % n]
     return (10**digs)*best_match + min(best_opposites)
+
 
 def main(verbose=False):
     MAX_DIGITS = 12

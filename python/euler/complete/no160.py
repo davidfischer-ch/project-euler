@@ -8,9 +8,11 @@ from ..functions import extended_euclid
 from ..functions import inverse_mod_n
 from ..functions import robust_divide
 
+
 def unit_a_zero_b(a, b):
     _, multiplier = extended_euclid(a, b)
     return (multiplier*b) % (a*b)
+
 
 def num_factors_fact(n, factor):
     result = 0
@@ -19,6 +21,7 @@ def num_factors_fact(n, factor):
         result += n/power
         power = factor*power
     return result
+
 
 def last5(n):
     if n < 8:
@@ -55,13 +58,14 @@ def last5(n):
 
     product = 1
     for residue, power in residues.items():
-        power_apply = power % (4*(5**4)) # PHI(5**5)
+        power_apply = power % (4*(5**4))  # PHI(5**5)
         product = (product*(residue**power_apply)) % (5**5)
-    fives = num_factors_fact(n, 5) % (4*(5**4)) # PHI(5**5)
+    fives = num_factors_fact(n, 5) % (4*(5**4))  # PHI(5**5)
     inverse = inverse_mod_n(2, 5**5)
     product = (product*(inverse**fives)) % (5**5)
 
     return (product*unit_a_zero_b(5**5, 2**5)) % 10**5
+
 
 def main(verbose=False):
     if last5(9) != 36288:

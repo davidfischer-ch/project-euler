@@ -4,6 +4,7 @@
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     return sum(int(dig) for dig in str(2**1000))
 

@@ -20,11 +20,12 @@
 
 from math import sqrt
 
-from python.conway_topograph import all_values_on_form
-from python.conway_topograph import get_recurrence
-from python.conway_topograph import start_to_series
+from ..conway_topograph import all_values_on_form
+from ..conway_topograph import get_recurrence
+from ..conway_topograph import start_to_series
 from ..decorators import euler_timer
 from ..functions import recurrence_next
+
 
 def main(verbose=False):
     # y = 2T - 1, T > 10**12 implies the following:

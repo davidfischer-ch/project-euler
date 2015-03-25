@@ -5,6 +5,7 @@
 from ..decorators import euler_timer
 from ..functions import sieve
 
+
 def main(verbose=False):
     return sum(sieve(2000000 - 1))
 

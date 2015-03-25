@@ -14,8 +14,10 @@
 from ..decorators import euler_timer
 from ..functions import get_data
 
+
 def name_score(name):
     return sum((ord(letter.upper()) - ord('A') + 1) for letter in name)
+
 
 def main(verbose=False):
     # The name file is a comma separated file with quotes

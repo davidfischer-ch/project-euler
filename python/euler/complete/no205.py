@@ -4,6 +4,7 @@ from ..decorators import euler_timer
 from ..functions import ascending
 from ..functions import total_perms
 
+
 def dice_outcomes(num_dice, num_sides):
     result = {}
     for bottom in range(1, num_sides + 1):
@@ -15,6 +16,7 @@ def dice_outcomes(num_dice, num_sides):
                 result[curr_sum] = result.get(curr_sum, 0) + \
                                    total_perms(outcome)
     return result
+
 
 def main(verbose=False):
     OUTCOMES_4 = dice_outcomes(9, 4)

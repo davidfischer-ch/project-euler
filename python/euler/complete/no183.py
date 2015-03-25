@@ -25,6 +25,7 @@ from math import floor
 from ..decorators import euler_timer
 from ..functions import robust_divide
 
+
 def k_star(N):
     k_1 = int(floor(N/EULER_e))
     k_2 = int(ceil(N/EULER_e))
@@ -34,15 +35,18 @@ def k_star(N):
         raise ValueError("Bad info with %s" % N)
     return k_1 if (k_1 + 1)**(k_1 + 1) > N*(k_1**k_1) else k_2
 
+
 def k_reduced(N):
     k_st = k_star(N)
     k_induced = robust_divide(robust_divide(k_st, 5), 2)
     shared_factors = gcd(k_induced, N)
     return k_induced/shared_factors
 
+
 def D(N):
     sign = 1 if k_reduced(N) > 1 else -1
     return sign*N
+
 
 def main(verbose=False):
     MAX_N = 10**4

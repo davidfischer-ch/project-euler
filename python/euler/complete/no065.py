@@ -36,6 +36,7 @@ from fractions import gcd
 from ..decorators import euler_timer
 from ..functions import recurrence_next
 
+
 def main(verbose=False):
     # we have h_(-1) = 1, k_(-1) = 0
     # h_0/k_0 = 2
@@ -45,7 +46,7 @@ def main(verbose=False):
     # The problem wants the 100th convergent which will
     # be h_99/k_99. To get to this, we need the first 99
     # values of a
-    a = reduce(operator.add, [[1,2*k,1] for k in range(1, 33 + 1)])
+    a = reduce(operator.add, [[1, 2*k, 1] for k in range(1, 33 + 1)])
     for a_i in a:
         relation = [1, a_i]
         h_values = recurrence_next(relation, h_values)

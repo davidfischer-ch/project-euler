@@ -4,6 +4,7 @@
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     result = 0
     for i in range(1, 1000 + 1):

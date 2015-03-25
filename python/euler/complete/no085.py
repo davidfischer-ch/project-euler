@@ -27,6 +27,7 @@
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     max_m = int(((16*10**6 + 1)**(0.5) - 1)/2.0) + 1
     closest = 0

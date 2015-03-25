@@ -4,6 +4,7 @@ from math import sqrt
 
 from ..decorators import euler_timer
 
+
 def forms_right_triangle(p, q):
     # squared val of sides
     squared_values = sorted([p[0]**2 + p[1]**2,
@@ -22,18 +23,19 @@ def forms_right_triangle(p, q):
         return False
     return (squared_values[0] + squared_values[1] == squared_values[2])
 
+
 def main(verbose=False):
     n = 50
     result = set()
-    points = [(x,y) for x in range(n + 1) for y in range(n + 1)]
-    num_points = (n + 1)**2 # len(points), clearly
+    points = [(x, y) for x in range(n + 1) for y in range(n + 1)]
+    num_points = (n + 1)**2  # len(points), clearly
     # loop through all combinations of p and q
     for i in range(num_points - 1):
         for j in range(i + 1, num_points):
             p = points[i]
             q = points[j]
             if forms_right_triangle(p, q):
-                result.add((p,q))
+                result.add((p, q))
     return len(result)
 
 if __name__ == '__main__':

@@ -5,6 +5,7 @@ import operator
 from ..decorators import euler_timer
 from ..functions import apply_to_list
 
+
 def main(verbose=False):
     n = 100
     powers = apply_to_list(operator.pow, range(2, n + 1))

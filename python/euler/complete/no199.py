@@ -4,6 +4,7 @@ from math import sqrt
 
 from ..decorators import euler_timer
 
+
 def inner_circle(e1, e2, e3):
     # Using (e1 + e2 + e3 + e4)^2 = 2(e1^2 + e2^2 + e3^2 + e4^2)
     # A = e1^2 + e2^2 + e3^2; B = e1 + e2 + e3
@@ -16,6 +17,7 @@ def inner_circle(e1, e2, e3):
     B = e1 + e2 + e3
     return B + sqrt(2*(B**2 - A))
 
+
 def next_3(node):
     points, eccentricity = node
     e1, e2, e3 = points
@@ -23,10 +25,11 @@ def next_3(node):
             [(eccentricity, e2, e3), inner_circle(eccentricity, e2, e3)],
             [(eccentricity, e3, e1), inner_circle(eccentricity, e3, e1)]]
 
+
 def main(verbose=False):
     iterations = 10
     C = {}
-    C[-1] = {0: [(1,1,1), 3 - 2*sqrt(3)] }
+    C[-1] = {0: [(1, 1, 1), 3 - 2*sqrt(3)]}
     C[0] = {0: [(1, 1, 3 - 2*sqrt(3)), 1],
             1: [(1, 1, 3 - 2*sqrt(3)), 1],
             2: [(1, 1, 3 - 2*sqrt(3)), 1]}

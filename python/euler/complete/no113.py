@@ -37,6 +37,7 @@
 from ..decorators import euler_timer
 from ..functions import choose
 
+
 def main(verbose=False):
     n = 100
     return choose(n + 10, 10) + choose(n + 9, 9) - 10*n - 2

@@ -6,6 +6,7 @@
 from ..decorators import euler_timer
 from ..functions import sieve
 
+
 def main(verbose=False):
     problem_max = 10**6
     PRIMES = sieve(problem_max)

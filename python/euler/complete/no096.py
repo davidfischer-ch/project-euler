@@ -9,9 +9,10 @@ import operator
 
 from ..decorators import euler_timer
 from ..functions import get_data
-from python.sudoku import make_generators
-from python.sudoku import stack_assumptions
-from python.sudoku import Sudoku
+from ..sudoku import make_generators
+from ..sudoku import stack_assumptions
+from ..sudoku import Sudoku
+
 
 def corner_sum(board):
     sudoku = Sudoku(board)
@@ -19,6 +20,7 @@ def corner_sum(board):
     for _ in stack_assumptions(make_generators(sudoku)):
         first, second, third = sudoku.board[0][:3]
         return 100*first + 10*second + third
+
 
 def main(verbose=False):
     puzzles = get_data(96).split("\n")

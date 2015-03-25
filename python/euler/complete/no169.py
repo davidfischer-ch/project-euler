@@ -9,6 +9,7 @@
 
 from ..decorators import euler_timer
 
+
 def f(n, hash_=None):
     if hash_ is None:
         hash_ = {}
@@ -24,6 +25,7 @@ def f(n, hash_=None):
         result = f((n - 1)/2)
     hash_[n] = result
     return result
+
 
 def main(verbose=False):
     f_hash = {}

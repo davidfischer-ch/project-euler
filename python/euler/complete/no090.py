@@ -3,12 +3,14 @@
 from ..decorators import euler_timer
 from ..functions import all_subsets
 
+
 def can_concat(left, right, candidates):
     possible = ['%s%s' % (dig_l, dig_r) for dig_l in left for dig_r in right]
     for dig_l in right:
         for dig_r in left:
             possible.append('%s%s' % (dig_l, dig_r))
     return (len(set(possible).intersection(candidates)) == 9)
+
 
 def main(verbose=False):
     dice = all_subsets(range(10), 6)

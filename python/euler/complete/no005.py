@@ -7,6 +7,7 @@ from fractions import gcd
 
 from ..decorators import euler_timer
 
+
 def min_product(n):
     if n < 2:
         return 1
@@ -14,6 +15,7 @@ def min_product(n):
     prod = min_product(n - 1)
     shared = gcd(prod, n)
     return prod*n/shared
+
 
 def main(verbose=False):
     return min_product(20)

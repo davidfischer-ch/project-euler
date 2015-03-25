@@ -18,9 +18,11 @@ from math import log
 
 from ..decorators import euler_timer
 
+
 def num_n_digits(n):
     # 10**(1 - 1/n) <= k < 10, for k integer
     return 10 - int(ceil(10**(1 - 1.0/n)))
+
 
 def main(verbose=False):
     MAX_n = int((1 - log(9)/log(10))**(-1))

@@ -34,12 +34,15 @@ import operator
 from ..decorators import euler_timer
 from ..functions import get_data
 
+
 def make_path(point, step, length):
     return [(point[0] + i*step[0], point[1] + i*step[1]) for i in range(length)]
+
 
 def convert(path, data):
     # Assumes path is made of points (x,y) where data[x][y] exists
     return reduce(operator.mul, [data[x][y] for x, y in path])
+
 
 def main(verbose=False):
     DATA = get_data(11)

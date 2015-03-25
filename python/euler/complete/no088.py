@@ -5,6 +5,7 @@
 from ..decorators import euler_timer
 from ..functions import all_factors
 
+
 def nontrivial_factorizations(n):
     factor_hash = {1: [1]}
     factor_hash = all_factors(n, factor_hash)

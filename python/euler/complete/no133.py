@@ -4,6 +4,7 @@ from ..decorators import euler_timer
 from ..functions import prime_divides_repunit_power10
 from ..functions import sieve
 
+
 def main(verbose=False):
     PRIMES = sieve(10**5)
     running_sum = 0

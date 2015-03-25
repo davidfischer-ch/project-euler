@@ -24,6 +24,7 @@ from ..decorators import euler_timer
 from ..functions import extended_euclid
 from ..functions import prime_factors
 
+
 def find_cube_roots(prime):
     # Won't check, but assumes prime is prime
     # in a prime field x^3 == 1 implies x == 1 or x^2 + x + 1 == 0
@@ -45,6 +46,7 @@ def find_cube_roots(prime):
     return sorted([1,
                    ((prime + 1)*(i - 1)/2) % prime,
                    ((prime + 1)*(prime - i - 1))/2 % prime])
+
 
 def main(verbose=False):
     product = 13082761331670030
@@ -70,7 +72,7 @@ def main(verbose=False):
         count = count % product
         vals.append(count)
 
-    return sum(vals) - 1 # 1 is in there as (1,1,...,1)
+    return sum(vals) - 1  # 1 is in there as (1, 1, ..., 1)
 
 if __name__ == '__main__':
     print euler_timer(271)(main)(verbose=True)

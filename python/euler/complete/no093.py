@@ -6,6 +6,7 @@ from ..decorators import euler_timer
 from ..functions import all_permutations
 from ..functions import all_subsets
 
+
 # a D b D c D d, for D in {+,-,*,/}
 # = {operator.add, operator.sub, operator.mul, operator.div}
 
@@ -27,7 +28,6 @@ def do_operations_no_paren(operators, numbers):
     if len(numbers) == 1:
         return numbers[0]
 
-
     for i, op in enumerate(operators):
         if op in [operator.mul, operator.div]:
             new_number = op(numbers[i], numbers[i+1])
@@ -40,6 +40,7 @@ def do_operations_no_paren(operators, numbers):
     new_numbers = [new_number] + numbers[2:]
     new_operators = operators[1:]
     return do_operations_no_paren(new_operators, new_numbers)
+
 
 def results(signs, numbers):
     # parentheses first
@@ -99,6 +100,7 @@ def results(signs, numbers):
 
     return [int(n) for n in result if int(n) == n]
 
+
 def most_consecutive(dig_cands, sign_cands):
     all_encountered = []
     for perm in all_permutations(dig_cands):
@@ -110,6 +112,7 @@ def most_consecutive(dig_cands, sign_cands):
     while biggest + 1 in all_encountered:
         biggest = biggest + 1
     return biggest
+
 
 def main(verbose=False):
     SIGNS = [operator.add, operator.sub, operator.mul, operator.div]

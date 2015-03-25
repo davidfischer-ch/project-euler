@@ -4,6 +4,7 @@ from ..decorators import euler_timer
 from ..functions import get_data
 from ..functions import prims_algo
 
+
 def main(verbose=False):
     data = [row.split(',') for row in get_data(107).split('\r\n') if row]
 

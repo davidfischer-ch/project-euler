@@ -31,6 +31,7 @@ from math import sqrt
 from ..decorators import euler_timer
 from ..functions import sieve
 
+
 def main(verbose=False):
     problem_max = 10**6
     count = 0
@@ -44,4 +45,3 @@ def main(verbose=False):
 
 if __name__ == '__main__':
     print euler_timer(131)(main)(verbose=True)
-

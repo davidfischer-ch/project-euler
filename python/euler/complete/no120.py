@@ -20,6 +20,7 @@
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     low = 3
     high = 1000

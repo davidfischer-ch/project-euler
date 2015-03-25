@@ -5,6 +5,7 @@
 from ..decorators import euler_timer
 from ..functions import sieve
 
+
 def main(verbose=False):
     # By the prime number theorem, pi(x) =~ x/ln(x)
     # pi(x) >= 10001 when x >= 10001 ln(x)

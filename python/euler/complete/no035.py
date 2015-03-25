@@ -8,9 +8,11 @@
 from ..decorators import euler_timer
 from ..functions import sieve
 
+
 def contains_only_digits(n, digits):
     n_digits = [int(dig) for dig in str(n)]
     return set(n_digits) <= set(digits)
+
 
 def all_circular_perms(list_):
     n = len(list_)
@@ -20,13 +22,16 @@ def all_circular_perms(list_):
         result.append([list_[index] for index in indices])
     return result
 
+
 def all_circular_perms_int(n):
     digs = [dig for dig in str(n)]
     return [int(''.join(perm)) for perm in all_circular_perms(digs)]
 
+
 def all_circular_perm_in(prime, primes):
     perms = all_circular_perms_int(prime)
     return set(perms) <= set(primes)
+
 
 def all_circular(n):
     # the number of digits limits the size of all permutations
@@ -35,11 +40,11 @@ def all_circular(n):
         [prime for prime in sieve(10**digs - 1)
          if contains_only_digits(prime, [1, 3, 7, 9])]
     return [prime for prime in possible_primes if prime <= n
-             and all_circular_perm_in(prime, possible_primes)]
+            and all_circular_perm_in(prime, possible_primes)]
+
 
 def main(verbose=False):
     return len(all_circular(10**6 - 1))
 
 if __name__ == '__main__':
     print euler_timer(35)(main)(verbose=True)
-

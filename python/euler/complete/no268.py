@@ -30,21 +30,17 @@
 
 # In general, we need to add/subtract back (index - 1 C 3)
 
-import operator
-
-from math import log
-
 from ..decorators import euler_timer
-from ..functions import all_subsets
 from ..functions import choose
 from ..functions import sieve
+
 
 def main(verbose=False):
     primes = sieve(100)
 
     MAX_n = 10**16
 
-    product_factor_pairs = [(1,0)]
+    product_factor_pairs = [(1, 0)]
     product_hash = {0: [1]}
     for num_factors in range(1, 13 + 1):
         product_hash[num_factors] = []
@@ -67,7 +63,7 @@ def main(verbose=False):
         PIE_factor = sign*choose(num_factors - 1, 3)
         current_sum = 0
         for product in product_hash[num_factors]:
-            current_sum += MAX_n/product # integer division
+            current_sum += MAX_n/product  # integer division
         result += PIE_factor*current_sum
 
     return result

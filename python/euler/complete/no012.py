@@ -6,12 +6,14 @@
 from ..decorators import euler_timer
 from ..functions import prime_factors
 
+
 def list_frequencies(list_):
     result = {}
     for element in list_:
         # if element is not in result, sets to 1 (default 0 returned by get)
         result[element] = result.get(element, 0) + 1
     return result.items()
+
 
 def special_num_factors(a, b, hash_):
     factors = prime_factors(a, unique=False, hash_=hash_) + \
@@ -23,11 +25,13 @@ def special_num_factors(a, b, hash_):
         prod *= factor[1] + 1
     return prod
 
+
 def num_factors_nth_triangular(n, hash_):
     if n % 2 == 0:
         return special_num_factors(n/2, n + 1, hash_)
     else:
         return special_num_factors(n, (n + 1)/2, hash_)
+
 
 def main(verbose=False):
     n = 1

@@ -17,6 +17,7 @@
 from ..decorators import euler_timer
 from ..functions import choose
 
+
 def main(verbose=False):
     expected_hash = {0: 0}
     for n in range(1, 32 + 1):

@@ -7,15 +7,17 @@ from ..decorators import euler_timer
 from ..functions import is_power
 from ..functions import sieve
 
+
 def is_possible(n, primes):
     if n % 2 == 0 or n in primes:
-        raise Error("Value poorly specified")
+        raise ValueError("Value poorly specified")
 
     primes_less = [prime for prime in primes if prime < n and prime != 2]
     for prime in primes_less:
         if is_power((n - prime)/2.0, 2):
             return True
     return False
+
 
 def main(verbose=False):
     # sieve(6000) will do it (answer is 5777)

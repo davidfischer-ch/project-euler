@@ -19,6 +19,7 @@
 
 from ..decorators import euler_timer
 
+
 def num_over_limit(n, limit):
     """
     Returns the number of values for n C r that are greater than limit
@@ -41,12 +42,14 @@ def num_over_limit(n, limit):
         return (n % 2) + 1
     return 0
 
+
 def all_over_limit(n_max, limit):
     """
     Returns the number of values for n C r that are greater than limit
     as n goes from 1 up to n_max
     """
     return sum(num_over_limit(n, limit) for n in range(1, n_max + 1))
+
 
 def main(verbose=False):
     return all_over_limit(100, 10**6)

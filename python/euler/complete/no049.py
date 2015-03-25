@@ -16,6 +16,7 @@ from ..decorators import euler_timer
 from ..functions import all_subsets
 from ..functions import sieve
 
+
 def find_arithmetic(list_):
     if len(list_) < 3:
         raise ValueError("List wrong size.")
@@ -25,6 +26,7 @@ def find_arithmetic(list_):
         if cand[0] + cand[2] == 2*cand[1]:
             return cand
     return []
+
 
 def main(verbose=False):
     primes = [prime for prime in sieve(10000) if prime > 999]

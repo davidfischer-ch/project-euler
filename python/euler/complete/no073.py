@@ -27,6 +27,7 @@ from math import floor
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     MAX_d = 12000
 

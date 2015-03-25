@@ -17,7 +17,8 @@ from math import sqrt
 from ..decorators import euler_timer
 from ..functions import sieve
 
-def max_prime_length(digits, primes = []):
+
+def max_prime_length(digits, primes=[]):
     """
     Returns the length of the longest string of primes
     (starting at 2,3,5,...) that will sum to less 10**digits
@@ -35,7 +36,8 @@ def max_prime_length(digits, primes = []):
             return num_primes
     raise ValueError("max_prime_length failed logic.")
 
-def all_prime_seqs(length, digits, primes = []):
+
+def all_prime_seqs(length, digits, primes=[]):
     """
     Returns all sequences of primes of
 
@@ -50,14 +52,15 @@ def all_prime_seqs(length, digits, primes = []):
     curr = primes[final_index - length + 1:final_index + 1]
     running_sum = sum(curr)
     while running_sum < cap:
-        running_sum -= curr[0] # remove the smallest value from the sum
+        running_sum -= curr[0]  # remove the smallest value from the sum
         result.append(curr)
         final_index += 1
         curr = primes[final_index - length + 1:final_index + 1]
-        running_sum += curr[-1] # add the new largest
+        running_sum += curr[-1]  # add the new largest
     return result
 
-def prime_sequence_exists(length, digits, primes = []):
+
+def prime_sequence_exists(length, digits, primes=[]):
     """
     Returns True if a sequence of length consecutive primes which sums
     to less than 10**digits also sums to a prime number
@@ -68,7 +71,8 @@ def prime_sequence_exists(length, digits, primes = []):
     sums = [sum(seq) for seq in all_prime_seqs(length, digits, primes)]
     return (set(sums).intersection(primes) != set())
 
-def longest_prime_sequence(digits, primes = []):
+
+def longest_prime_sequence(digits, primes=[]):
     """
     Returns the length of the most consecutive primes which sum
     to a prime and sum to less then 10**digits
@@ -81,11 +85,13 @@ def longest_prime_sequence(digits, primes = []):
             return length
     raise ValueError("Algorithm failed")
 
+
 def longest_prime(digits):
     primes = sieve(10**digits)
     length = longest_prime_sequence(digits, primes)
     sums = [sum(seq) for seq in all_prime_seqs(length, digits, primes)]
     return max(set(sums).intersection(primes))
+
 
 def main(verbose=False):
     return longest_prime(6)

@@ -3,8 +3,9 @@
 from math import sqrt
 
 from ..decorators import euler_timer
-from python.conway_topograph import next_juncture_on_river
-from python.conway_topograph import juncture_isom
+from ..conway_topograph import next_juncture_on_river
+from ..conway_topograph import juncture_isom
+
 
 def minimal_solution(D):
     B = ((1, -1), 1 - D)
@@ -19,6 +20,7 @@ def minimal_solution(D):
     # be at J[1]. Since P = ((x, y), val) and
     # We seek only (x,y), we want J[1][0]
     return J_curr[1][0]
+
 
 def main(verbose=False):
     max_n = 1000

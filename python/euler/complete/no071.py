@@ -27,6 +27,7 @@
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     D = 10**6
     return 3*int((D - 5)/7.0) + 2

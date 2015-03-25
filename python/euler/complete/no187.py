@@ -13,6 +13,7 @@ from math import sqrt
 from ..decorators import euler_timer
 from ..functions import sieve
 
+
 def main(verbose=False):
     MAX_n = 10**8
     # q <= p, q**2 <= pq = n < max_n, q < sqrt(max_n)

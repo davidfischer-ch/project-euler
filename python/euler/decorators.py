@@ -2,6 +2,7 @@ import time
 from math import floor
 from math import log10
 
+
 def euler_timer(problem_number):
 
     def result_timer(method):

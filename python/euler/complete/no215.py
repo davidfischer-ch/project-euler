@@ -2,6 +2,7 @@
 
 from ..decorators import euler_timer
 
+
 def special_perms(num_2, num_3):
     if num_3 == 0:
         return [[2]*num_2]
@@ -12,11 +13,13 @@ def special_perms(num_2, num_3):
              [[3] + perm for perm in special_perms(num_2, num_3 - 1)]
     return result
 
+
 def cumulative_sum(list_):
     result = [list_[0]]
     for entry in list_[1:]:
         result.append(result[-1] + entry)
     return result
+
 
 # 2*x + 3*y = 32
 # implies y = 2*y_star, x = 16 - 3*y_star for 0 <= y_star <= 5

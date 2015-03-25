@@ -21,6 +21,7 @@
 from ..decorators import euler_timer
 from ..functions import polygonal_number
 
+
 def find_residue(residue):
     p = {0: 1}
 

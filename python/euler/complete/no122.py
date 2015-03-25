@@ -2,6 +2,7 @@
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     MAX_n = 200
 

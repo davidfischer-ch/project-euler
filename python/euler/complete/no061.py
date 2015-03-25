@@ -6,6 +6,7 @@ from ..decorators import euler_timer
 from ..functions import polygonal_number
 from ..functions import reverse_polygonal_number
 
+
 def all_polygonal(s, digits):
     result = []
     for i in range(10**digits):
@@ -17,6 +18,7 @@ def all_polygonal(s, digits):
                 break
 
     return result
+
 
 def possible_digits_key():
     left_digits = set()
@@ -43,6 +45,7 @@ def possible_digits_key():
             result.setdefault(left, []).append((right, sides))
 
     return result
+
 
 def find_paths(start_val, start_sides, length, possible):
     """
@@ -75,6 +78,7 @@ def find_paths(start_val, start_sides, length, possible):
 
     return paths
 
+
 def successful_path():
     """
     Returns the first set of 6 (XX, sides) pairs that form
@@ -97,6 +101,7 @@ def successful_path():
                 return path
     raise ValueError("Algorithm on 61 failed.")
 
+
 def main(verbose=False):
     COLORS = ['\033[98m',
               '\033[96m',
@@ -104,7 +109,7 @@ def main(verbose=False):
               '\033[94m',
               '\033[92m',
               '\033[91m',
-              '\033[98m'] # Loops back to beginning
+              '\033[98m']  # Loops back to beginning
     ENDC = '\033[0m'
 
     path = successful_path()

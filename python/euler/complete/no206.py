@@ -11,6 +11,7 @@
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     for n in xrange(101010101, 138902662 + 1):
         if n % 250 in [43, 53, 83, 167, 197, 207]:

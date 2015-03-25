@@ -3,6 +3,7 @@
 from ..decorators import euler_timer
 from ..functions import recurrence_next
 
+
 def zero_absent(relation, initial_values, modulus):
     initial = [value % modulus for value in initial_values]
     curr = initial[:]
@@ -17,9 +18,10 @@ def zero_absent(relation, initial_values, modulus):
         curr = [value % modulus for value in recurrence_next(relation, curr)]
     return True
 
+
 def main(verbose=False):
-    relation = [1,1,1]
-    initial_values = [1,1,1]
+    relation = [1, 1, 1]
+    initial_values = [1, 1, 1]
     NUMBER_SUCCESSES = 124
 
     found = [27]

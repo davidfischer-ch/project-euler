@@ -16,6 +16,7 @@ from ..decorators import euler_timer
 from ..functions import is_prime
 from ..functions import sieve
 
+
 def truncated_list(n, from_left):
     if from_left:
         digs = [dig for dig in str(n)]
@@ -25,8 +26,10 @@ def truncated_list(n, from_left):
         digs = [dig for dig in str(n)]
         return [int("".join(digs[:i + 1])) for i in range(len(digs))]
 
+
 def truncated_all(n):
     return list(set(truncated_list(n, True) + truncated_list(n, False)))
+
 
 def is_truncatable_prime(n, primes):
     candidates = truncated_all(n)
@@ -39,9 +42,10 @@ def is_truncatable_prime(n, primes):
             return False
     return True
 
+
 def find_first_n_truncatable(n, max_n):
     result = []
-    primes = sieve(max_n)[4:] # We don't include 2, 3, 5, or 7
+    primes = sieve(max_n)[4:]  # We don't include 2, 3, 5, or 7
     for prime in primes:
         if is_truncatable_prime(prime, primes):
             result.append(prime)
@@ -52,6 +56,7 @@ def find_first_n_truncatable(n, max_n):
         raise Exception("Not enough found, raise max_n")
 
     return result
+
 
 def main(verbose=False):
     ans = find_first_n_truncatable(11, 10**6)

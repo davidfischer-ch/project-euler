@@ -47,10 +47,12 @@
 from ..decorators import euler_timer
 from ..functions import is_power
 
+
 def unique_pairs(k, M):
     lower = max(k - M, 1)
-    upper = k/2 # integer division intended
+    upper = k/2  # integer division intended
     return upper - lower + 1
+
 
 def main(verbose=False):
     TARGET = 10**6

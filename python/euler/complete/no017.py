@@ -12,6 +12,7 @@
 
 from ..decorators import euler_timer
 
+
 def words(n):
     tens = {2: "twenty", 3: "thirty", 4: "forty", 5: "fifty", 6: "sixty",
             7: "seventy", 8:  "eighty", 9: "ninety"}
@@ -29,7 +30,7 @@ def words(n):
 
     if digs[0] != 0:
         if n != 100*digs[0]:
-            result.extend([ones[digs[0]] , "hundred", "and"])
+            result.extend([ones[digs[0]], "hundred", "and"])
         else:
             return "%s hundred" % ones[digs[0]]
 
@@ -45,11 +46,13 @@ def words(n):
 
     return " ".join(result)
 
+
 def num_letters_in_word(n):
     result = words(n)
     result = "".join(result.split())
     result = "".join(result.split("-"))
     return len(result)
+
 
 def main(verbose=False):
     return sum(num_letters_in_word(i) for i in range(1, 1001))

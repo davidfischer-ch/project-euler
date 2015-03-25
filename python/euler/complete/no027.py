@@ -22,6 +22,7 @@
 from ..decorators import euler_timer
 from ..functions import sieve
 
+
 def polynomial_consecutive_primes(a, b, primes):
     # f(n + 1) = f(n) + 1 + a + 2n
     current = b
@@ -30,6 +31,7 @@ def polynomial_consecutive_primes(a, b, primes):
         current += 1 + a + 2*index
         index += 1
     return index
+
 
 def main(verbose=False):
     PRIMES = sieve(86238)

@@ -18,6 +18,7 @@
 from ..decorators import euler_timer
 from ..functions import inverse_mod_n
 
+
 def sequence(letters, p_3, c, P_2):
     if letters == '':
         return p_3, c, P_2
@@ -29,6 +30,7 @@ def sequence(letters, p_3, c, P_2):
         return sequence(letters[:-1], p_3 + 1, 3*c - 2*P_2, 4*P_2)
     elif to_apply == 'd':
         return sequence(letters[:-1], p_3 + 1, 3*c + P_2, 2*P_2)
+
 
 def main(verbose=False):
     p_3, c, P_2 = sequence('UDDDUdddDDUDDddDdDddDDUDDdUUDd', 0, 0, 1)

@@ -4,6 +4,7 @@ from ..decorators import euler_timer
 from ..functions import astar
 from ..functions import get_data
 
+
 def main(verbose=False):
     data = [[int(entry) for entry in row.split(",")]
             for row in get_data(83).split("\n") if row]
@@ -15,6 +16,7 @@ def main(verbose=False):
             arranged_data[(i, j)] = data[i][j]
 
     MINIMUM = min(arranged_data.values())
+
     def heuristic(node):
         return (2*size - 2 - sum(node))*MINIMUM
 
@@ -31,4 +33,3 @@ def main(verbose=False):
 
 if __name__ == '__main__':
     print euler_timer(83)(main)(verbose=True)
-

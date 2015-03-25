@@ -22,6 +22,7 @@
 
 from ..decorators import euler_timer
 
+
 def main(verbose=False):
     L = 1
     while 12345*L + 1 >= 2**L:

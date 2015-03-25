@@ -3,6 +3,7 @@
 from ..decorators import euler_timer
 from ..functions import fill_count
 
+
 def main(verbose=False):
     return fill_count(3, 50)
 

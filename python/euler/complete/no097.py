@@ -17,11 +17,13 @@
 from ..decorators import euler_timer
 from ..functions import order_mod_n
 
+
 def unit_a_null_b(a, b):
     k = 1
     while (k*a + 1) % b != 0:
         k += 1
     return (k*a + 1) % (a*b)
+
 
 def main(verbose=False):
     # We need to find the residue of P modulo 5**10

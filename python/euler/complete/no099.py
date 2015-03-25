@@ -5,6 +5,7 @@ from math import log
 from ..decorators import euler_timer
 from ..functions import get_data
 
+
 def main(verbose=False):
     data = [row.split(",") for row in get_data(99).split("\n") if row]
 
@@ -16,7 +17,7 @@ def main(verbose=False):
             max_val = log_val
             winner = i
 
-    return winner + 1 # account for 0 vs. 1 initial index
+    return winner + 1  # account for 0 vs. 1 initial index
 
 if __name__ == '__main__':
     print euler_timer(99)(main)(verbose=True)

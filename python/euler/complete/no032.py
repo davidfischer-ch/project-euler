@@ -7,6 +7,7 @@
 
 from ..decorators import euler_timer
 
+
 def all_orderings(list_):
     if len(list_) == 1:
         return [list_]
@@ -20,12 +21,13 @@ def all_orderings(list_):
 
     return result
 
+
 # Will take a list and break it at various places, returning
 # the product of the integers formed
 def possible_products(list_):
     result = []
 
-    for i in range(1,len(list_)):
+    for i in range(1, len(list_)):
         left = list_[:i]
         left = int("".join(str(elt) for elt in left))
         right = list_[i:]
@@ -34,9 +36,10 @@ def possible_products(list_):
 
     return result
 
+
 def main(verbose=False):
     products = set()
-    candidates = all_orderings(range(1,10))
+    candidates = all_orderings(range(1, 10))
     for candidate in candidates:
         prods = possible_products(candidate[:5])
         last4 = candidate[-4:]

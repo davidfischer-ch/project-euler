@@ -3,6 +3,7 @@
 from ..decorators import euler_timer
 from ..functions import all_factors
 
+
 def main(verbose=False):
     n = 10000
     factors = all_factors(n - 1)

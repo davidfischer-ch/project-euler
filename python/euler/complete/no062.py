@@ -9,6 +9,7 @@
 
 from ..decorators import euler_timer
 
+
 def all_cubes(digits):
     # 10**(d-1) <= X**3 < 10**d
     cube_10 = 10**(1/3.0)
@@ -21,6 +22,7 @@ def all_cubes(digits):
     else:
         m = int(m) + 1
     return [x**3 for x in range(m, M + 1)]
+
 
 def has_k_perms(digits, k, cubes):
     sorted_cubes = {}
@@ -37,6 +39,7 @@ def has_k_perms(digits, k, cubes):
         return min(possible_matches[0])
     else:
         return -1
+
 
 def main(verbose=False):
     digits = len(str(41063625))

@@ -159,6 +159,7 @@ from ..functions import sieve
 # LC(L + 1) - LC(L) = 6*L
 # So we can increment these as well
 
+
 def main(verbose=False):
     TOTAL = 2000
     MAX_n = 10**6
@@ -172,14 +173,14 @@ def main(verbose=False):
     current = 2
 
     layer = 3
-    first_corner = 8 # Value of first corner in layer
-    last_corner = 19 # Value of last corner in layer
-    six_shared = 11 # prime candidate shared by both corners,
-                    # with a difference of 6
-    six_first = 13 # prime candidate for first corner, diff 6
-    six_last = 17 # prime candidate for last corner, diff 6
-    twelve_first = 29 # prime candidate for first corner, diff 12
-    twelve_last = 17 # prime candidate for last corner, diff 12
+    first_corner = 8  # Value of first corner in layer
+    last_corner = 19  # Value of last corner in layer
+    six_shared = 11  # prime candidate shared by both corners,
+                     # with a difference of 6
+    six_first = 13  # prime candidate for first corner, diff 6
+    six_last = 17  # prime candidate for last corner, diff 6
+    twelve_first = 29  # prime candidate for first corner, diff 12
+    twelve_last = 17  # prime candidate for last corner, diff 12
     while count < TOTAL:
         if twelve_first > MAX_n:
             raise Exception("Primes not large enough")

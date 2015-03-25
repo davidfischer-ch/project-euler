@@ -17,11 +17,12 @@
 # ==> (3*n - sign)**2 - 4 = 9n**2 - 6*sign*n - 3 = 12h**2
 # ==> (3*n - sign)**2 - 3(2h)**2 = 4
 
-from python.conway_topograph import all_values_on_form
-from python.conway_topograph import get_recurrence
-from python.conway_topograph import start_to_series
+from ..conway_topograph import all_values_on_form
+from ..conway_topograph import get_recurrence
+from ..conway_topograph import start_to_series
 from ..decorators import euler_timer
 from ..functions import recurrence_next
+
 
 def solutions(limit):
     # We seek x_k^2 - 3y_k^2 = 4
@@ -31,7 +32,7 @@ def solutions(limit):
     series = [start_to_series(initial, x_mult, 'x')
               for initial in starting_points]
     result = [pair[0] for pair in series
-               if pair[0] % 3 != 0 and pair[0] > 0]
+              if pair[0] % 3 != 0 and pair[0] > 0]
     while max(result) < 2*limit:
         next = [pair[1] for pair in series
                 if pair[1] % 3 != 0 and pair[1] > 0]
@@ -48,6 +49,7 @@ def solutions(limit):
     # The first two solutions are 1-1-0 and 1-1-2, which are both degenerate
     return [perimeter for perimeter in result
             if perimeter < limit and perimeter not in (2, 4)]
+
 
 def main(verbose=False):
     # the first solutions up to a billion are returned in solutions(10**9)

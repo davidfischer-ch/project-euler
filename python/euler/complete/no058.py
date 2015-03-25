@@ -66,6 +66,7 @@ from ..decorators import euler_timer
 from ..functions import is_prime
 from ..functions import sieve
 
+
 def main(verbose=False):
     # layer/primes
     #     2/3
@@ -90,7 +91,7 @@ def main(verbose=False):
         for candidate in candidates:
             if is_prime(candidate, primes=PRIMES, failure_point=FAILURE_POINT):
                 num_primes += 1
-    side_length = 2*layer - 1 # 2*(layer - 1) + 1
+    side_length = 2*layer - 1  # 2*(layer - 1) + 1
     return side_length
 
 if __name__ == '__main__':

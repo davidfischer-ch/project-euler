@@ -19,6 +19,7 @@ from math import sqrt
 from ..decorators import euler_timer
 from ..functions import is_palindrome
 
+
 def palindromic_square_sums(n):
     # first populate all pairs that add to less than n
     # 2k**2 < k**2 + (k + 1)**2 < n
@@ -35,6 +36,7 @@ def palindromic_square_sums(n):
         result.extend([num for num in curr if is_palindrome(num)])
 
     return set(result)
+
 
 def main(verbose=False):
     PROBLEM_MAX = 10**8

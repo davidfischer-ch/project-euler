@@ -15,6 +15,7 @@
 from ..decorators import euler_timer
 from ..functions import all_subsets
 
+
 def all_choices(n):
     result = []
     number_digit_sums = (n + 1)/2
@@ -36,6 +37,7 @@ def all_choices(n):
 
     return result
 
+
 def valid_choice(choice, n):
     # all indices except final
     if choice[1][1] == 0:
@@ -53,6 +55,7 @@ def valid_choice(choice, n):
             return False
 
     return True
+
 
 def choice_to_count(choice, n):
     number_digit_sums = (n + 1)/2
@@ -87,6 +90,7 @@ def choice_to_count(choice, n):
             raise Exception("Signature not recognized")
 
     return result
+
 
 def main(verbose=False):
     running_sum = 0

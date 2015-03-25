@@ -20,6 +20,7 @@ from ..decorators import euler_timer
 from ..functions import polygonal_number
 from ..functions import reverse_polygonal_number
 
+
 def increment_pair(pair):
     """
     Increments pair by traversing through all
@@ -34,6 +35,7 @@ def increment_pair(pair):
         return [k, j]
     else:
         return [j, j + 1]
+
 
 def main(verbose=False):
     # Not only finds the minimum, but also checks to make sure
