@@ -20,11 +20,11 @@ else:
   problem_list = range(1, 50 + 1)
 
 for problem_number in problem_list:
-  path = 'complete/no%03d.py' % problem_number
+  path = 'euler/complete/no%03d.py' % problem_number
   if os.path.exists(path):
-      module = 'complete.no%03d' % problem_number
+      module = 'euler.complete.no%03d' % problem_number
   else:
-      module = 'too_slow.no%03d' % problem_number
+      module = 'euler.too_slow.no%03d' % problem_number
 
   main = __import__(module, fromlist=['main'])
   begin = time.time()
