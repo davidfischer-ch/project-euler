@@ -12,6 +12,8 @@
 
 # NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 
+import copy
+
 from ..decorators import euler_timer
 from ..functions import is_prime
 from ..functions import sieve
@@ -37,7 +39,7 @@ def is_truncatable_prime(n, primes):
         if candidate in primes:
             continue
         elif is_prime(candidate):
-            primes.append(candidate)
+            primes.add(candidate)
         else:
             return False
     return True
@@ -45,8 +47,8 @@ def is_truncatable_prime(n, primes):
 
 def find_first_n_truncatable(n, max_n):
     result = []
-    primes = sieve(max_n)[4:]  # We don't include 2, 3, 5, or 7
-    for prime in primes:
+    primes = set(sieve(max_n)[4:])  # We don't include 2, 3, 5, or 7
+    for prime in copy.copy(primes):
         if is_truncatable_prime(prime, primes):
             result.append(prime)
         if len(result) == n:
